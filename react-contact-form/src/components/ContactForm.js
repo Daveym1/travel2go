@@ -3,7 +3,7 @@ const ContactForm = () => {
   const [formStatus, setFormStatus] = React.useState('Send')
   const onSubmit = (e) => {
     e.preventDefault()
-    setFormStatus('Submitting...')
+    setFormStatus('Submitting the form...')
     const { name, email, message } = e.target.elements
     let conFom = {
       name: name.value,
@@ -30,7 +30,7 @@ const ContactForm = () => {
         </div>
         <div className="mb-3">
           <label className="form-label" htmlFor="message">
-            Message
+            Enquiry
           </label>
           <textarea className="form-control" id="message" required />
         </div>
