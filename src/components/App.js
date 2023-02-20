@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SearchBar from "../components/SearchBar/SearchBar";
 import SearchCategories from "../components/SearchCategories/SearchCategories";
 import SearchResults from "../components/SearchResults/SearchResults";
+import "../index.css";
 
 function App() {
   const [location, setLocation] = useState({ lat: null, lng: null });
@@ -25,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Google Places Search</h1>
+        <h1 className="text-blue-700">Travel2Go</h1>
       </header>
       <div className="search-container">
         <SearchBar handleSelect={handlePlaceSelect} />

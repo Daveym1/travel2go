@@ -90,6 +90,12 @@ const SearchCategories = ({ handleTypeSelect }) => {
     handleTypeSelect(type);
   };
 
+  function getName(type) {
+    const newName = type.replace("_", " ");
+
+    return newName;
+  }
+
   return (
     <div className="categories-container">
       <div className="categories">
@@ -112,9 +118,9 @@ const SearchCategories = ({ handleTypeSelect }) => {
           <button
             key={type}
             onClick={() => handleTypeSelectLocal(type)}
-            className="type"
+            className="type bg-red-300 border-2"
           >
-            {type}
+            {getName(type)}
           </button>
         ))}
       </div>
