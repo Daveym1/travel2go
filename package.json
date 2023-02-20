@@ -12,7 +12,11 @@
     "react": "^18.2.0",
     "react-async-script": "^1.2.0",
     "react-dom": "^18.2.0",
+<<<<<<< HEAD
+    "react-router-dom": "^6.8.1",
+=======
     "react-places-autocomplete": "^7.3.0",
+>>>>>>> 41f37458b1aa75355d489ef585fce40190685041
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
