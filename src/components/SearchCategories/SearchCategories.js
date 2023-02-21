@@ -104,52 +104,51 @@ const SearchCategories = ({ handleTypeSelect }) => {
     (category) => category.name === selectedCategory.name
   )[0].types;
 
-/*   const handleResultsFound = (results) => {
-    if (results.length === 0) {
-      setResultsFound(false);
-    } else {
-      setResultsFound(true);
-    }
-  }; */
+  /*   const handleResultsFound = (results) => {
+      if (results.length === 0) {
+        setResultsFound(false);
+      } else {
+        setResultsFound(true);
+      }
+    }; */
 
   return (
-    <div id="SearchCategories">
-      <div className="categories">
-        {categories.map((category) => (
-          <button
-            key={category.name}
-            onClick={() => handleCategorySelect(category)}
-            className={
-              selectedCategory.name === category.name
-                ? "category active text-white bg-[#FF9119] hover:bg-[#FF9119]/80 focus:ring-4 focus:outline-none focus:ring-[#FF9119]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 dark:focus:ring-[#FF9119]/40 mr-2 mb-2"
-                : "category p-3 text-gray-900 bg-gray-100 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 mr-2 mb-2"
-            }
-            type="button">
-            {category.name}
-          </button>
-        ))}
-      </div>
-      {categoryClicked && (
-
-        <div className="types">
-          {filteredTypes.map((type) => (
+    <div id="alignItems">
+      <div id="SearchCategories">
+        <div className="categories" id="alignItems">
+          {categories.map((category) => (
             <button
-              key={type}
-              onClick={() => handleTypeSelectLocal(type)}
-              type="button" 
-              className="type text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2"
-                >
-              {getName(type)}
+              key={category.name}
+              onClick={() => handleCategorySelect(category)}
+              className={
+                selectedCategory.name === category.name
+                  ? "category active text-white bg-[#FF9119] hover:bg-[#FF9119]/80 focus:ring-4 focus:outline-none focus:ring-[#FF9119]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 dark:focus:ring-[#FF9119]/40 mr-2 mb-2"
+                  : "category p-3 text-gray-900 bg-gray-100 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 mr-2 mb-2"
+              }
+              type="button">
+              {category.name}
             </button>
           ))}
-          {!resultsFound && <div className="no-results">No results found.</div>}
         </div>
-      )}
+        {categoryClicked && (
+
+          <div className="types" id="alignItems">
+            {filteredTypes.map((type) => (
+              <button
+                key={type}
+                onClick={() => handleTypeSelectLocal(type)}
+                type="button"
+                className="type text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2"
+              >
+                {getName(type)}
+              </button>
+            ))}
+            {!resultsFound && <div className="no-results">No results found.</div>}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
 export default SearchCategories;
-
-
-
