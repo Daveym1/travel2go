@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-// export default SearchResults;
-
-=======
->>>>>>> 444588347db1c357631a7d32fdace0bead0916d7
 import React, { useState, useEffect } from "react";
 import "./SearchResults.css";
 
@@ -60,23 +55,8 @@ const SearchResults = ({ location, type }) => {
 
   // Currently using css grid to display the search results
   return (
-<<<<<<< HEAD
-=======
-    <div className="grid-container">
-      {placesWithImages.slice(0, 9).map((place) => (
-        <div key={place.place_id} className="grid-item">
-          <img
-            src={
-              place.photos && place.photos.length > 0
-                ? place.photos[0].getUrl()
-                : ""
-            }
-            alt={place.name}
-          />
->>>>>>> 444588347db1c357631a7d32fdace0bead0916d7
-
     <div className="grid grid-cols-2 md:grid-cols-4 gap-5" id="SearchResults">
-      {places.slice(0, 9).map((place) => (
+    {placesWithImages.slice(0, 9).map((place) => (
         <div key={place.place_id} className="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700">
           <a href="#!" data-te-ripple-init data-te-ripple-color="light">
             <div className="flex flex-column">
