@@ -26,9 +26,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="text-blue-700">Travel2Go</h1>
+        <h1 className="text-blue-700 text-3xl flex justify-center p-2">Travel2Go</h1>
       </header>
-      <div className="search-container">
+      <div className="search-container ml-10 mr-10">
         <SearchBar handleSelect={handlePlaceSelect} />
         <SearchCategories setType={setType} handleTypeSelect={setType} />
         {location.lat && location.lng && (
