@@ -75,6 +75,10 @@ const categories = [
       "supermarket",
     ],
   },
+  {
+    name: "Car Rental",
+    types: [],
+  },
 ];
 
 // useState hooks for checking the selected category and whether a category button has been clicked

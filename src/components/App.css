@@ -5,3 +5,9 @@
     align-items: center;
     justify-content: center;
   }
+
+  #travel2gologo img {
+    width: 50px;
+    height: auto;
+  }
+  
