@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import SearchBar from "../components/SearchBar/SearchBar";
 import SearchCategories from "../components/SearchCategories/SearchCategories";
 import SearchResults from "../components/SearchResults/SearchResults";
+
+import travel2gologo from "../assets/images/travel2go-logo.jpg"
+
 import "../index.css";
 
 function App() {
@@ -26,9 +29,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="text-blue-700">Travel2Go</h1>
+      <img src={travel2gologo} alt="Travel 2 Go Logo" className="mx-auto" style={{ width: 100, height: 'auto'}} />
+        <h1 className="text-blue-700 text-3xl flex justify-center p-2">Travel2Go</h1>
       </header>
-      <div className="search-container">
+      <div className="search-container ml-10 mr-10">
         <SearchBar handleSelect={handlePlaceSelect} />
         <SearchCategories setType={setType} handleTypeSelect={setType} />
         {location.lat && location.lng && (

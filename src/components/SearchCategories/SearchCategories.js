@@ -75,6 +75,7 @@ const categories = [
       "supermarket",
     ],
   },
+  
 ];
 
 // useState hooks for checking the selected category and whether a category button has been clicked
@@ -92,6 +93,7 @@ const SearchCategories = ({ handleTypeSelect }) => {
 
   const handleTypeSelectLocal = (type) => {
     handleTypeSelect(type);
+    setSelectedType(type); //Added line
   };
 
   function getName(type) {
@@ -104,45 +106,50 @@ const SearchCategories = ({ handleTypeSelect }) => {
     (category) => category.name === selectedCategory.name
   )[0].types;
 
-  const handleResultsFound = (results) => {
-    if (results.length === 0) {
-      setResultsFound(false);
-    } else {
-      setResultsFound(true);
-    }
-  };
+  const [selectedType, setSelectedType] = useState(null);
 
   return (
-    <div className="categories-container">
-      <div className="categories">
-        {categories.map((category) => (
-          <button
-            key={category.name}
-            onClick={() => handleCategorySelect(category)}
-            className={
-              selectedCategory.name === category.name
-                ? "category active"
-                : "category p-3 "
-            }
-          >
-            {category.name}
-          </button>
-        ))}
-      </div>
-      {categoryClicked && (
-        <div className="types">
-          {filteredTypes.map((type) => (
+    <div id="alignItems">
+
+      <div id="SearchCategories">
+        <div className="categories relative flex w-full flex-wrap items-center justify-between" id="alignItems">
+      <button type="button" className="text-gray-900 bg-gray-100 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center dark:focus:ring-gray-500 mr-2 mb-2"
+          onClick={() =>}
+          >Car Rental
+</button>
+          {categories.map((category) => (
             <button
-              key={type}
-              onClick={() => handleTypeSelectLocal(type)}
-              className="type inline-block rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+              key={category.name}
+              onClick={() => handleCategorySelect(category)}
+              className={
+                selectedCategory.name === category.name
+                  ? "category active text-white bg-[#FF9119] hover:bg-[#FF9119]/80 focus:ring-4 focus:outline-none focus:ring-[#FF9119]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 dark:focus:ring-[#FF9119]/40 mr-2 mb-2"
+                  : "category p-3 text-gray-900 bg-gray-100 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 mr-2 mb-2"
+              }
             >
-              {getName(type)}
+              {category.name}
             </button>
           ))}
-          {!resultsFound && <div className="no-results">No results found.</div>}
         </div>
-      )}
+        {categoryClicked && (
+          <div className="relative flex w-full flex-wrap items-center justify-between" id="alignItems">
+            {filteredTypes.map((type) => (
+              <button
+                key={type}
+                onClick={() => handleTypeSelectLocal(type)}
+                className={
+                  selectedType === type
+                    ? "type category active text-white bg-[#FF9119] hover:bg-[#FF9119]/80 focus:ring-4 focus:outline-none focus:ring-[#FF9119]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 dark:focus:ring-[#FF9119]/40 mr-2 mb-2"
+                    : "type category p-3 text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-800 dark:bg-white dark:border-gray-700 dark:text-gray-900 dark:hover:bg-gray-200 mr-2 mb-2"
+                }
+              >
+                {getName(type)}
+              </button>
+            ))}
+            {!resultsFound && <div className="no-results">No results found.</div>}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

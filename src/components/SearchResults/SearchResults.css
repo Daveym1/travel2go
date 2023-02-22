@@ -1,3 +1,10 @@
 #SearchResults {
   padding-top: 5rem;
 }
+
+#alignItems
+{
+display: flex;
+align-items: center;
+justify-content: center;
+}

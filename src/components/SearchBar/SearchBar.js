@@ -28,34 +28,36 @@ const SearchBar = ({ handleSelect }) => {
       searchOptions={searchOptions}
     >
       {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-        <div className="container">
-          <input
-            {...getInputProps({
-              placeholder: "Search Places...",
-              className: "search-input",
-            })}
-          />
-          <div className="autocomplete-dropdown-container">
-            {loading && <div>Loading...</div>}
-            {suggestions.map((suggestion) => {
-              const className = suggestion.active
-                ? "suggestion-item--active"
-                : "suggestion-item";
-              const style = suggestion.active
-                ? { backgroundColor: "#fafafa", cursor: "pointer" }
-                : { backgroundColor: "#ffffff", cursor: "pointer" };
-              return (
-                <div
-                  {...getSuggestionItemProps(suggestion, {
-                    className,
-                    style,
-                  })}
-                  key={suggestion.placeId}
-                >
-                  <span>{suggestion.description}</span>
-                </div>
-              );
-            })}
+        <div id="alignItems">
+          <div className="container mx-auto">
+            <input
+              {...getInputProps({
+                placeholder: "Search Places...",
+                className: "search-input text-center",
+              })}
+            />
+            <div className="autocomplete-dropdown-container">
+              {loading && <div>Loading...</div>}
+              {suggestions.map((suggestion) => {
+                const className = suggestion.active
+                  ? "suggestion-item--active text-center"
+                  : "suggestion-item text-center";
+                const style = suggestion.active
+                  ? { backgroundColor: "#fafafa", cursor: "pointer" }
+                  : { backgroundColor: "#ffffff", cursor: "pointer" };
+                return (
+                  <div
+                    {...getSuggestionItemProps(suggestion, {
+                      className,
+                      style,
+                    })}
+                    key={suggestion.placeId}
+                  >
+                    <span>{suggestion.description}</span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       )}
