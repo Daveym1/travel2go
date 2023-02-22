@@ -105,13 +105,7 @@ const SearchCategories = ({ handleTypeSelect }) => {
     (category) => category.name === selectedCategory.name
   )[0].types;
 
-  /*   const handleResultsFound = (results) => {
-      if (results.length === 0) {
-        setResultsFound(false);
-      } else {
-        setResultsFound(true);
-      }
-    }; */
+  const [selectedType, setSelectedType] = useState(null);
 
   return (
     <div className="categories-container">
@@ -136,7 +130,10 @@ const SearchCategories = ({ handleTypeSelect }) => {
             <button
               key={type}
               onClick={() => handleTypeSelectLocal(type)}
-              className="type inline-block rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+              className={`type inline-block rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-black transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] 
+                ${selectedType === type
+                   ? "category active"
+                   : "category p-3"}`}
             >
               {getName(type)}
             </button>
