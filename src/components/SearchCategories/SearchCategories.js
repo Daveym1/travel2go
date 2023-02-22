@@ -75,10 +75,7 @@ const categories = [
       "supermarket",
     ],
   },
-  {
-    name: "Car Rental",
-    types: [],
-  },
+  
 ];
 
 // useState hooks for checking the selected category and whether a category button has been clicked
@@ -113,8 +110,13 @@ const SearchCategories = ({ handleTypeSelect }) => {
 
   return (
     <div id="alignItems">
+
       <div id="SearchCategories">
         <div className="categories relative flex w-full flex-wrap items-center justify-between" id="alignItems">
+      <button type="button" className="text-gray-900 bg-gray-100 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center dark:focus:ring-gray-500 mr-2 mb-2"
+          onClick={() =>}
+          >Car Rental
+</button>
           {categories.map((category) => (
             <button
               key={category.name}
