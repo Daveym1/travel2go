@@ -55,7 +55,7 @@ const SearchResults = ({ location, type }) => {
 
   // Currently using css grid to display the search results
   return (
-    <div  id="alignItems">
+    <div id="alignItems">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-5" id="SearchResults">
         {placesWithImages.slice(0, 9).map((place) => (
           <div key={place.place_id} className="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700">

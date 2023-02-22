@@ -28,7 +28,7 @@ const SearchBar = ({ handleSelect }) => {
       searchOptions={searchOptions}
     >
       {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-        <div className="container">
+        <div className="container" id="alignItems">
           <input
             {...getInputProps({
               placeholder: "Search Places...",

@@ -114,8 +114,8 @@ const SearchCategories = ({ handleTypeSelect }) => {
 
   return (
     <div id="alignItems">
-      <div id="SearchCategories">
-        <div className="categories" id="alignItems">
+      <div id="SearchCategorie">
+        <div className="categories relative flex w-full flex-wrap items-center justify-between" id="alignItems">
           {categories.map((category) => (
             <button
               key={category.name}
@@ -132,7 +132,7 @@ const SearchCategories = ({ handleTypeSelect }) => {
         </div>
         {categoryClicked && (
 
-          <div className="types" id="alignItems">
+          <div className="types relative flex w-full flex-wrap items-center justify-between" id="alignItems">
             {filteredTypes.map((type) => (
               <button
                 key={type}
