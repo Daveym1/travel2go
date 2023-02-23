@@ -8,13 +8,13 @@ function HeroSection() {
           <div className="carousel-container">
             <div className="carousel-content">
               <h2 data-aos="fade-down">
-                <span>Welcome to</span> Travel2Go
+                <span>Welcome to</span> Travel2Go <span>Cars</span>
               </h2>
               <p data-aos="fade-up">
-                Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et
-                est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
-                mollitia ut. Similique ea voluptatem. Esse doloremque accusamus
-                repellendus deleniti vel. Minus et tempore modi architecto.
+                Drive your way with Ease! Say goodbye to the hassle of finding and renting a car. 
+                Looking  for a hassle-free way to rent a car? look no further than Travel2GO! With our user friendly interface, 
+                you CarRentaleasily search for available cars, compare prices and features, and make a reservation in just a few clicks.
+                Our app offer a range of rental options to suit your needs from short-term to long-term rental.
               </p>
               <div data-aos="fade-up" data-aos-delay="500">
                 <a href="#search-form" className="btn-menu">

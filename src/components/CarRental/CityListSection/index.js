@@ -12,8 +12,7 @@ function CityListSection() {
             Check out some of the <span>Popular Cities</span>
           </h2>
           <p>
-            Ut possimus qui ut temporibus culpa velit eveniet modi omnis est
-            adipisci expedita at voluptas atque vitae autem.
+            Here's just a few of the places you might visit while self driving in our luxurious cars.
           </p>
         </div>
 
