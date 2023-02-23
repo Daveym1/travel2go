@@ -28,13 +28,13 @@ function Car(props) {
           <img className="card-img-top" src={image} alt="Card image cap" />
         </div>
         <div className="card-body pt-0">
-          <div class="d-flex flex-row justify-content-between align-items-center">
+          <div className="d-flex flex-row justify-content-between align-items-center">
             <div>
               <h5 className="card-title">{name}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">{description}</h6>
+              <h6 className="card-subtitle mb-2 text-muted">{description}</h6>
             </div>
             <div>
-              <h6 class="car-price">${price}</h6>
+              <h6 className="car-price">${price}</h6>
             </div>
           </div>
           <p className="card-text">
