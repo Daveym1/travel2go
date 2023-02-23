@@ -89,7 +89,7 @@ const SearchResults = ({ location, type }) => {
                 href={place.website}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 rounded-lg bg-gray-200 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#FF9119] hover:bg-[#FF9119]/80 focus:ring-4 focus:outline-none focus:ring-blue-300"
               >
                 <span className="w-full">website</span>
                 <svg
