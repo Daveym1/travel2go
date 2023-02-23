@@ -76,7 +76,7 @@ const SearchResults = ({ location, type }) => {
               </div>
             </a>
             <div className="p-6">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
                 {place.name}
               </h5>
               <p className="mb-4 font-normal text-gray-700 dark:text-gray-40">
