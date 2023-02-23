@@ -15,6 +15,10 @@ function CarList(props) {
     setIsotope(
       new Isotope(carsRef.current, {
         itemSelector: '.car',
+        masonry: {
+          // columnWidth: 200
+          rowHeight: 200
+        }
       })
     );
   }, [])

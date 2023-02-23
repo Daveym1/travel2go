@@ -91,7 +91,7 @@ function Header(props) {
         </nav>
 
         {props.numOfItems > 0 ? (
-          <NavLink to="/CarRental/cart" end className="book-a-table-btn">
+          <NavLink to="/CarRental/cart" end className="cart-btn">
             <i className="bx bxs-shopping-bag" style={{ fontSize: "18px" }}></i>
             <span>({props.numOfItems})</span>
           </NavLink>
