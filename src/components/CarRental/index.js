@@ -1,13 +1,14 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import CarList from "./components/CarList";
-import Cart from "./components/Cart";
+import CarList from "../CarRental/CarList";
+import Cart from "../CarRental/Cart";
 import { useEffect, useState } from "react";
-import Home from "./components/Home";
-import Header from "./components/Header";
-import Contact from "./components/Contact";
-import ActivityList from "./components/ActivityList";
+import Home from "../CarRental/Home";
+import Header from "../CarRental/Header";
+import Contact from "../CarRental/Contact";
+import ActivityList from "../CarRental/ActivityList";
 
-function App() {
+
+function CarRental() {
   const [carData, setCarData] = useState();
   const [cart, setCart] = useState([]);
   const [itemsCount, setItemsCount] = useState();
@@ -54,7 +55,7 @@ function App() {
 
   return (
     <div>
-      <Router>
+      
         <Header numOfItems={itemsCount} />
         <Routes>
           <Route path="/" element={<Home setCarData={setCarData} />} />
@@ -62,9 +63,9 @@ function App() {
             path="/cars"
             element={<CarList rentals={carData} addItem={addItem} />}
           />
-          <Route path="/activities" element={<ActivityList />} />
+          <Route path="/CarRental/activities" element={<ActivityList />} />
           <Route
-            path="/cart"
+            path="/CarRental/cart"
             element={
               <Cart
                 cart={cart}
@@ -74,11 +75,11 @@ function App() {
               />
             }
           />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/CarRental/contact" element={<Contact />} />
         </Routes>
-      </Router>
+      
     </div>
   );
 }
 
-export default App;
+export default CarRental;

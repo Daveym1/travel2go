@@ -26,7 +26,7 @@ function Header(props) {
   useEffect(() => {
     if (location.pathname !== "/") {
       ref.current.classList.add("header-scrolled");
-    } else if (location.pathname === "/") {
+    } else if (location.pathname === "/CarRental") {
       handleScrollOnHome(scrollValue);
     }
   }, [location, scrollValue]);
@@ -80,7 +80,7 @@ function Header(props) {
         </nav>
 
         {props.numOfItems > 0 ? (
-          <NavLink to="/cart" end className="book-a-table-btn">
+          <NavLink to="/CarRental/cart" end className="book-a-table-btn">
             <i className="bx bxs-shopping-bag" style={{ fontSize: "18px" }}></i>
             <span>({props.numOfItems})</span>
           </NavLink>

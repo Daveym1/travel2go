@@ -18,7 +18,7 @@ const Cart = (props) => {
           <div className="product-details mr-2">
             <div
               className="d-flex flex-row align-items-center go-back"
-              onClick={() => navigate("/cars")}
+              onClick={() => navigate("/CarRental/cars")}
             >
               <i className="bx bx-arrow-back"></i>
               <span className="ms-2">Continue Exploring</span>

@@ -312,7 +312,7 @@ h4 {
   background-color: rgba(39, 37, 34, 0.8);
   overflow: hidden;
   padding: 0;
-  background: url("../../../public/images/hero1.jpg") top right no-repeat;
+  background: url("../../../../public/images/hero1.jpg") top right no-repeat;
 }
 
 #hero .carousel-item {

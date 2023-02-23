@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { LocalActivitySharp } from "@material-ui/icons";
 import { DirectionsCar } from "@material-ui/icons";
-import MapIcon from "@material-ui/icons/Map";
 import {
   CircleMenu,
   CircleMenuItem,
@@ -32,14 +31,14 @@ export const CircularNav = () => {
         rotationAngleInclusive={false}
       >
         <CircleMenuItem
-          onClick={() => navigate("/cars")}
+          onClick={() => navigate("/CarRental/cars")}
           tooltip="Rental Cars"
           tooltipPlacement={TooltipPlacement.Right}
         >
           <DirectionsCar />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => navigate("/activities")}
+          onClick={() => navigate("/CarRental/activities")}
           tooltip="Activities"
           tooltipPlacement={TooltipPlacement.Right}
         >
