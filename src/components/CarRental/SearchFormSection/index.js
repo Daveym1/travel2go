@@ -133,7 +133,7 @@ const SearchFormSection = (props) => {
                   className="form-control"
                   placeholder="Delivery Date and Time"
                   min={minDateTime}
-                  value={minDateTime}
+                  value={values.pickup}
                   onChange={handleChange}
                 />
               </div>
@@ -144,7 +144,7 @@ const SearchFormSection = (props) => {
                   className="form-control"
                   placeholder="Return Date and Time"
                   min={minDateTime}
-                  value={minDateTime}
+                  value={values.dropoff}
                   onChange={handleChange}
                 />
               </div>
