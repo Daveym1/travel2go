@@ -41,7 +41,7 @@ function Contact() {
         </div>
       </div>
 
-      <div className="container" data-aos="fade-up">
+      <div className="container info" data-aos="fade-up">
 
         <div className="info-wrap">
           <div className="row">
