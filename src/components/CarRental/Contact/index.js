@@ -118,7 +118,13 @@ function Contact() {
         </form>
 
       </div>
+      <section>
+        <div className="text-center">
+          <p>Project by: David Marsh, Rui Belo, Mandip Nijor and Billy Golooba</p>
+        </div>
+      </section>
     </section>
+    
   );
 }
 
