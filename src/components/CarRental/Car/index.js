@@ -9,33 +9,41 @@ function Car(props) {
   const bags = props.info.vehicleInfo.bagCapacity;
   const trans = props.info.vehicleInfo.transmissionTypeCode;
 
+
+  const getCarType = (description) => {
+    let desc = description.toLowerCase()
+    if (desc.includes("suv")) return "filter-suv";
+    if (desc.includes("van")) return "filter-van";
+    return "filter-sedan";
+  }
+
   return (
-    <div className="col-md-3 mb-3">
-      <div className="car card card-blog">
+    <div className={"car col-md-3 mb-3 " + getCarType(description)}>
+      <div className="card card-blog">
         <div className="card-image">
           <a href="#">
             <img className="img" src={image} />
           </a>
-          {/* <div className="ripple-cont"></div> */}
+          <div className="ripple-cont"></div>
         </div>
         <div className="table">
           <div className="d-flex justify-content-between mb-2">
-              <div className="d-flex align-items-center">
-                <i className='bx bx-user'></i>
-                <span>{seats}</span>
-              </div>
-              <div className="d-flex align-items-center">
-                <i className="bx bx-briefcase-alt"></i>
-                <span>{bags}</span>
-              </div>
-              <div className="d-flex align-items-center">
-                <i className="bx bx-briefcase-alt"></i>
-                <span>{bags}</span>
-              </div>
-              <div className="d-flex align-items-center">
-                <i className="bx bxs-color"></i>
-                <span>{trans}</span>
-              </div>
+            <div className="d-flex align-items-center">
+              <i className='bx bx-user'></i>
+              <span>{seats}</span>
+            </div>
+            <div className="d-flex align-items-center">
+              <i className="bx bx-briefcase-alt"></i>
+              <span>{bags}</span>
+            </div>
+            {/* <div className="d-flex align-items-center">
+              <i className="bx bx-briefcase-alt"></i>
+              <span>{bags}</span>
+            </div> */}
+            <div className="d-flex align-items-center">
+              <i className="bx bxs-color"></i>
+              <span>{trans}</span>
+            </div>
           </div>
 
           <div className="d-flex justify-content-between mb-1">
@@ -52,7 +60,6 @@ function Car(props) {
               ${price}
             </h5>
           </div>
-          {/* <p className="card-description mb-1">{description}</p> */}
 
           <button
             type="button"

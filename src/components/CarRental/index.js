@@ -1,11 +1,10 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import CarList from "../CarRental/CarList";
 import Cart from "../CarRental/Cart";
 import { useEffect, useState } from "react";
 import Home from "../CarRental/Home";
 import Header from "../CarRental/Header";
 import Contact from "../CarRental/Contact";
-import ActivityList from "../CarRental/ActivityList";
 
 
 function CarRental() {
@@ -55,29 +54,28 @@ function CarRental() {
 
   return (
     <div>
-      
-        <Header numOfItems={itemsCount} />
-        <Routes>
-          <Route path="/" element={<Home setCarData={setCarData} />} />
-          <Route
-            path="/cars"
-            element={<CarList rentals={carData} addItem={addItem} />}
-          />
-          <Route path="/CarRental/activities" element={<ActivityList />} />
-          <Route
-            path="/CarRental/cart"
-            element={
-              <Cart
-                cart={cart}
-                removeItem={removeItem}
-                addItem={addItem}
-                clearItem={clearItem}
-              />
-            }
-          />
-          <Route path="/CarRental/contact" element={<Contact />} />
-        </Routes>
-      
+
+      <Header numOfItems={itemsCount} />
+      <Routes>
+        <Route path="/" element={<Home setCarData={setCarData} />} />
+        <Route
+          path="/cars"
+          element={<CarList rentals={carData} addItem={addItem} />}
+        />
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cart={cart}
+              removeItem={removeItem}
+              addItem={addItem}
+              clearItem={clearItem}
+            />
+          }
+        />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+
     </div>
   );
 }

@@ -55,7 +55,7 @@ label.radio span {
   font-weight: 300;
 }
 
-label.radio input:checked + span {
+label.radio input:checked+span {
   border-color: #fff;
   background-color: blue;
   color: #fff;

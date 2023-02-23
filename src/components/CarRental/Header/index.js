@@ -24,7 +24,7 @@ function Header(props) {
   };
 
   useEffect(() => {
-    if (location.pathname !== "/") {
+    if (location.pathname !== "/CarRental") {
       ref.current.classList.add("header-scrolled");
     } else if (location.pathname === "/CarRental") {
       handleScrollOnHome(scrollValue);
@@ -55,7 +55,7 @@ function Header(props) {
           <ul>
             <li>
               <NavLink
-                to="/"
+                to="/CarRental"
                 end
                 className={({ isActive }) =>
                   isActive ? "nav-link active" : "nav-link"
@@ -66,7 +66,18 @@ function Header(props) {
             </li>
             <li>
               <NavLink
-                to="/contact"
+                to="/"
+                end
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+              >
+                Activities
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/CarRental/contact"
                 end
                 className={({ isActive }) =>
                   isActive ? "nav-link active me-3" : "nav-link me-3"

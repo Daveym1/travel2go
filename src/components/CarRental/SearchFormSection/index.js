@@ -5,7 +5,8 @@ import "./style.css";
 
 const SearchFormSection = (props) => {
   const navigate = useNavigate();
-  const [values, setValue] = useState({
+  const [isLoading, setIsLoading] = useState(false);
+  const [values, setValues] = useState({
     location: "",
     pickup: "",
     dropoff: "",
@@ -16,26 +17,24 @@ const SearchFormSection = (props) => {
 
     const { name, value } = event.target;
 
-    setValue({
+    setValues({
       ...values,
       [name]: value,
     });
   };
 
   const fetchCarData = () => {
+    setIsLoading(true)
     carAPI
       .get("locations", { params: { name: values.location } })
       .then((response) => {
         return response.data;
       })
       .then((data) => {
-        // const cityOfInterest = data.find(city => city.countryCode === "UK")
         const cityOfInterest = data[0];
-        console.log("at city filter", cityOfInterest);
         return cityOfInterest.cityID;
       })
       .then((cityID) => {
-        console.log("at city id", cityID);
         const data = {
           date_time_pickup: values.pickup,
           location_pickup: cityID,
@@ -48,14 +47,17 @@ const SearchFormSection = (props) => {
           .then(function (response) {
             console.log(response.data);
             props.setCarData(response.data);
-            navigate("/cars");
+            navigate("/CarRental/cars");
+            setIsLoading(false)
           })
           .catch((error) => {
             console.log(error);
+            setIsLoading(false)
           });
       })
       .catch(function (error) {
         console.error(error);
+        setIsLoading(false)
       });
   };
 
@@ -63,7 +65,7 @@ const SearchFormSection = (props) => {
     event.preventDefault();
 
     fetchCarData();
-    setValue({
+    setValues({
       location: "",
       pickup: "",
       dropoff: "",
@@ -79,11 +81,10 @@ const SearchFormSection = (props) => {
       <div className="container">
         <div className="section-title">
           <h2>
-            Search for a <span>City</span> to visit
+            Search for a <span>Car</span> to rent
           </h2>
           <p>
-            Ut possimus qui ut temporibus culpa velit eveniet modi omnis est
-            adipisci expedita at voluptas atque vitae autem.
+            We promise to get you the best deals on the market
           </p>
         </div>
 
@@ -92,6 +93,7 @@ const SearchFormSection = (props) => {
           role="form"
           className="car-form w-50 mx-auto"
           onSubmit={handleSubmit}
+          data-aos="fade-up"
         >
           <div className="row">
             <div className="col-lg-12 col-md-12 form-group">

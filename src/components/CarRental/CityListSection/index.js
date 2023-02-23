@@ -17,7 +17,7 @@ function CityListSection() {
           </p>
         </div>
 
-        <div className="d-flex justify-content-evenly flex-wrap">
+        <div className="d-flex justify-content-evenly flex-wrap" data-aos="fade-up">
           <div className="p-2">
             <div className="container-box">
               <div className="card-box">
