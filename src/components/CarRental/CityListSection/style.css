@@ -1,0 +1,126 @@
+.container-box .card-box .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fbb03b;
+}
+
+.container-box .card-box .icon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  color: #fff;
+}
+
+.container-box .card-box .slide {
+  width: 300px;
+  height: 200px;
+  transition: 0.5s;
+}
+
+.container-box .card-box .slide.slide1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transition: 0.7s;
+  transform: translateY(100px);
+}
+
+.container-box .card-box:hover .slide.slide1 {
+  transform: translateY(0px);
+}
+
+.container-box .card-box .slide.slide2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: 0.8s;
+  transform: translateY(-100px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.container-box .card-box:hover .slide.slide2 {
+  transform: translateY(0);
+}
+
+.container-box .card-box .slide.slide2::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  bottom: 15px;
+  left: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fbb03b;
+}
+
+.container-box .card-box .slide.slide2 .content p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #414141;
+}
+
+.container-box .card-box .slide.slide2 .content h3 {
+  margin: 0 0 10px 0;
+  padding: 0;
+  font-size: 24px;
+  text-align: center;
+  color: #414141;
+}
+
+
+
+/*--------------------------------------------------------------
+  # Popular Cities
+  --------------------------------------------------------------*/
+.top-cities .box {
+  padding: 50px 30px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  transition: all ease-in-out 0.3s;
+  height: 100%;
+}
+
+.top-cities .box span {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffcf88;
+}
+
+.top-cities .box h4 {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 0;
+  margin: 20px 0;
+  color: #6c665c;
+}
+
+.top-cities .box p {
+  color: #aaaaaa;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.top-cities .box:hover {
+  background: #ffb03b;
+  padding: 30px 30px 70px 30px;
+  box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
+}
+
+.top-cities .box:hover span,
+.top-cities .box:hover h4,
+.top-cities .box:hover p {
+  color: #fff;
+}
