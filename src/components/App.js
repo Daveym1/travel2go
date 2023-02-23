@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import travel2gologo from "../assets/images/travel2go-logo.jpg"
+import travel2gologo from "../assets/images/travel2go-logo.png";
 import MainApp from "./MainApp";
 
 import "../index.css";
@@ -29,16 +29,18 @@ function App() {
     <Router>
       <Routes>
         <Route path="/CarRental/*" element={<CarRental />} />
-      <Route path="/" element={<MainApp 
-      travel2gologo = {travel2gologo}
-      handlePlaceSelect = {handlePlaceSelect}
-      setType = {setType}
-      location = {location}
-      type = {type}
-       />} />
-
-    
-        
+        <Route
+          path="/"
+          element={
+            <MainApp
+              travel2gologo={travel2gologo}
+              handlePlaceSelect={handlePlaceSelect}
+              setType={setType}
+              location={location}
+              type={type}
+            />
+          }
+        />
       </Routes>
     </Router>
   );
