@@ -1,6 +1,7 @@
 import "./style.css";
 
 function Car(props) {
+
   const image = props.info.vehicleInfo.images.SIZE268X144;
   const name = props.info.vehicleInfo.vehicleExample;
   const description = props.info.vehicleInfo.description;
@@ -18,53 +19,31 @@ function Car(props) {
     return "filter-sedan";
   }
 
+  const carType = getCarType(description)
+
   return (
-    <div className={"car col-md-3 mb-3 " + getCarType(description)}>
-      <div className="card card-blog">
-        <div className="card-image">
-          <a href="#">
-            <img className="img" src={image} />
-          </a>
-          <div className="ripple-cont"></div>
+    <div className={"car col-md-3 my-3 " + carType}>
+      <div className="card car-card">
+        <div className="card-img-block">
+          <img className="card-img-top" src={image} alt="Card image cap" />
         </div>
-        <div className="table">
-          <div className="d-flex justify-content-between mb-2">
-            <div className="d-flex align-items-center">
-              <i className='bx bx-user'></i>
-              <span>{seats}</span>
+        <div className="card-body pt-0">
+          <div class="d-flex flex-row justify-content-between align-items-center">
+            <div>
+              <h5 className="card-title">{name}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{description}</h6>
             </div>
-            <div className="d-flex align-items-center">
-              <i className="bx bx-briefcase-alt"></i>
-              <span>{bags}</span>
-            </div>
-            {/* <div className="d-flex align-items-center">
-              <i className="bx bx-briefcase-alt"></i>
-              <span>{bags}</span>
-            </div> */}
-            <div className="d-flex align-items-center">
-              <i className="bx bxs-color"></i>
-              <span>{trans}</span>
+            <div>
+              <h6 class="car-price">${price}</h6>
             </div>
           </div>
-
-          <div className="d-flex justify-content-between mb-1">
-            <div className="d-flex-col">
-              <h6 className="category text-info p-0 mb-1" id="car-name">
-                {name}
-              </h6>
-              <div className="p-0" id="car-model">
-                {description}
-              </div>
-            </div>
-
-            <h5 className="justify-content-end pt-2" id="car-price">
-              ${price}
-            </h5>
-          </div>
+          <p className="card-text">
+            Seats: {seats ? seats : "NA"} Bags: {bags ? bags : "NA"} - {trans === "M" ? "Manual" : "Auto"}
+          </p>
 
           <button
             type="button"
-            className="btn"
+            className="btn btn-primary mt-2"
             onClick={() =>
               props.addItem({
                 name: name,

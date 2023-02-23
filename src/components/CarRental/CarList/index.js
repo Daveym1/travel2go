@@ -15,7 +15,6 @@ function CarList(props) {
     setIsotope(
       new Isotope(carsRef.current, {
         itemSelector: '.car',
-        layoutMode: 'fitRows'
       })
     );
   }, [])
@@ -69,7 +68,7 @@ function CarList(props) {
       </div>
 
       <div className="container pt-5" data-aos="fade-up">
-        <div ref={carsRef} className="row gy-4">
+        <div ref={carsRef} className="row gy-6">
           {Object.keys(carDetails)
             .slice(0, LIMIT)
             .map((carInfo, index) => (
