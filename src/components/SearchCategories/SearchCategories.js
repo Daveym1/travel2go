@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./SearchCategories.css";
+import { useNavigate } from "react-router-dom"
+
+
 
 // Arrays of categories
 
@@ -84,7 +87,7 @@ const SearchCategories = ({ handleTypeSelect }) => {
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
   const [categoryClicked, setCategoryClicked] = useState(false);
   const [resultsFound, setResultsFound] = useState(true);
-
+  const navigate = useNavigate();
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
     setCategoryClicked(true);
@@ -114,7 +117,9 @@ const SearchCategories = ({ handleTypeSelect }) => {
       <div id="SearchCategories">
         <div className="categories relative flex w-full flex-wrap items-center justify-between" id="alignItems">
       <button type="button" className="text-gray-900 bg-gray-100 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center dark:focus:ring-gray-500 mr-2 mb-2"
-          onClick={() =>}
+          onClick={() =>
+            navigate("/CarRental")
+          }
           >Car Rental
 </button>
           {categories.map((category) => (

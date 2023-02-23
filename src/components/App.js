@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import SearchBar from "../components/SearchBar/SearchBar";
-import SearchCategories from "../components/SearchCategories/SearchCategories";
-import SearchResults from "../components/SearchResults/SearchResults";
-
-import travel2gologo from "../assets/images/travel2go-logo.jpg"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import travel2gologo from "../assets/images/travel2go-logo.png";
+import MainApp from "./MainApp";
 
 import "../index.css";
+import CarRental from "./CarRental/index.js";
 
 function App() {
   const [location, setLocation] = useState({ lat: null, lng: null });
@@ -27,19 +26,23 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
-      <img src={travel2gologo} alt="Travel 2 Go Logo" className="mx-auto" style={{ width: 100, height: 'auto'}} />
-        <h1 className="text-blue-700 text-3xl flex justify-center p-2">Travel2Go</h1>
-      </header>
-      <div className="search-container ml-10 mr-10">
-        <SearchBar handleSelect={handlePlaceSelect} />
-        <SearchCategories setType={setType} handleTypeSelect={setType} />
-        {location.lat && location.lng && (
-          <SearchResults location={location} type={type} />
-        )}
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/CarRental/*" element={<CarRental />} />
+        <Route
+          path="/"
+          element={
+            <MainApp
+              travel2gologo={travel2gologo}
+              handlePlaceSelect={handlePlaceSelect}
+              setType={setType}
+              location={location}
+              type={type}
+            />
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 
