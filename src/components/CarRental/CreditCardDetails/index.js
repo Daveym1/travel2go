@@ -5,6 +5,7 @@ const CreditCardDetails = ({ computeTotalAmount }) => {
   return (
     <div className="col-md-4">
       <div className="payment-info">
+
         <div className="d-flex justify-content-between align-items-center">
           <span>Card details</span>
         </div>

@@ -15,6 +15,7 @@ function CarList(props) {
     setIsotope(
       new Isotope(carsRef.current, {
         itemSelector: '.car',
+        layoutMode: 'fitRows'
       })
     );
   }, [])
@@ -50,7 +51,7 @@ function CarList(props) {
 
       <div className="container">
         <div className="container">
-          <div className="section-title">
+          <div className="section-title pb-2">
             <h2> Rental <span>Cars</span></h2>
           </div>
         </div>
@@ -61,12 +62,13 @@ function CarList(props) {
               <li data-filter=".filter-suv" onClick={handleFilter}>SUV</li>
               <li data-filter=".filter-van" onClick={handleFilter}>VAN</li>
               <li data-filter=".filter-sedan" onClick={handleFilter}>SEDAN</li>
+              <li data-filter=".filter-truck" onClick={handleFilter}>TRUCK</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div className="container pt-2" data-aos="fade-up">
+      <div className="container pt-5" data-aos="fade-up">
         <div ref={carsRef} className="row gy-4">
           {Object.keys(carDetails)
             .slice(0, LIMIT)

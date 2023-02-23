@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ThreeCircles } from 'react-loader-spinner'
 import carAPI from "../carApi";
 import "./style.css";
 
@@ -11,6 +12,9 @@ const SearchFormSection = (props) => {
     pickup: "",
     dropoff: "",
   });
+
+  const minDateTime = new Date().toISOString()
+    .slice(0, new Date().toISOString().lastIndexOf(":"))
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -78,67 +82,79 @@ const SearchFormSection = (props) => {
       className="search-form d-flex align-items-center flex-column justify-content-center"
       style={{ height: "100vh" }}
     >
-      <div className="container">
-        <div className="section-title">
-          <h2>
-            Search for a <span>Car</span> to rent
-          </h2>
-          <p>
-            We promise to get you the best deals on the market
-          </p>
+      {isLoading === true ?
+        <ThreeCircles
+          height="100"
+          width="100"
+          color="#4fa94d"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+          ariaLabel="three-circles-rotating"
+          outerCircleColor="orange"
+          innerCircleColor="#800000"
+          middleCircleColor="teal"
+        />
+        :
+
+        <div className="container">
+          <div className="section-title">
+            <h2>
+              Search for a <span>Car</span> to rent
+            </h2>
+            <p>
+              We promise to get you the best deals on the market
+            </p>
+          </div>
+
+          <form
+            action=""
+            role="form"
+            className="car-form w-50 mx-auto"
+            onSubmit={handleSubmit}
+            data-aos="fade-up"
+          >
+            <div className="row">
+              <div className="col-lg-12 col-md-12 form-group">
+                <input
+                  type="text"
+                  name="location"
+                  className="form-control"
+                  placeholder="City Name"
+                  value={values.location}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div className="col-lg-6 col-md-6 form-group mt-3">
+                <input
+                  type="datetime-local"
+                  name="pickup"
+                  className="form-control"
+                  placeholder="Delivery Date and Time"
+                  min={minDateTime}
+                  value={minDateTime}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="col-lg-6 col-md-6 form-group mt-3 mb-3">
+                <input
+                  type="datetime-local"
+                  name="dropoff"
+                  className="form-control"
+                  placeholder="Return Date and Time"
+                  min={minDateTime}
+                  value={minDateTime}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className="text-center">
+              <button type="submit">Search</button>
+            </div>
+          </form>
         </div>
-
-        <form
-          action=""
-          role="form"
-          className="car-form w-50 mx-auto"
-          onSubmit={handleSubmit}
-          data-aos="fade-up"
-        >
-          <div className="row">
-            <div className="col-lg-12 col-md-12 form-group">
-              <input
-                type="text"
-                name="location"
-                className="form-control"
-                placeholder="City Name"
-                value={values.location}
-                onChange={handleChange}
-              />
-            </div>
-
-            <div className="col-lg-6 col-md-6 form-group mt-3">
-              <input
-                type="datetime-local"
-                name="pickup"
-                className="form-control"
-                placeholder="Delivery Date and Time"
-                min={new Date()
-                  .toISOString()
-                  .slice(0, new Date().toISOString().lastIndexOf(":"))}
-                value={values.pickup}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="col-lg-6 col-md-6 form-group mt-3 mb-3">
-              <input
-                type="datetime-local"
-                name="dropoff"
-                className="form-control"
-                placeholder="Return Date and Time"
-                min={new Date()
-                  .toISOString()
-                  .slice(0, new Date().toISOString().lastIndexOf(":"))}
-                value={values.dropoff}
-                onChange={handleChange}
-              />
-            </div>
-          </div>
-          <div className="text-center">
-            <button type="submit">Search</button>
-          </div>
-        </form>
-      </div>
+      }
     </section>
   );
 };

@@ -14,6 +14,7 @@ function Car(props) {
     let desc = description.toLowerCase()
     if (desc.includes("suv")) return "filter-suv";
     if (desc.includes("van")) return "filter-van";
+    if (desc.includes("truck")) return "filter-truck";
     return "filter-sedan";
   }
 
@@ -56,7 +57,7 @@ function Car(props) {
               </div>
             </div>
 
-            <h5 className="justify-content-end" id="car-price">
+            <h5 className="justify-content-end pt-2" id="car-price">
               ${price}
             </h5>
           </div>
