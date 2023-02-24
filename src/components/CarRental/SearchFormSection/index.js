@@ -106,7 +106,7 @@ const SearchFormSection = (props) => {
               We promise to get you the best deals on the market
             </p>
           </div>
-
+          
           <form
             action=""
             role="form"
@@ -152,6 +152,13 @@ const SearchFormSection = (props) => {
             <div className="text-center">
               <button type="submit">Search</button>
             </div>
+ <br />       
+<div className = "text-center">
+<p>
+Please select hire car times between 09:00 and 17:00
+</p>
+</div>
+
           </form>
         </div>
       }
