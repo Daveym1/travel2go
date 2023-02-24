@@ -48,7 +48,7 @@ function Header(props) {
             <a href=""></a>
           </h1>
 
-          <a href=""><img src={process.env.PUBLIC_URL + "/logo.png"} alt="" className="img-fluid" /><h1 style={{ color: "white" }}>Travel2Go</h1></a>
+          <a><img src={process.env.PUBLIC_URL + "/logo.png"} alt="" className="img-fluid" /><h1 style={{ color: "white" }}>Travel2Go</h1></a>
         </div>
 
         <nav id="navbar" className="navbar order-last order-lg-0">
